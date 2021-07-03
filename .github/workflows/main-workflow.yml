@@ -1,0 +1,14 @@
+name: Main workflow
+on: [push]
+jobs:
+  main-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo code
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: yarn install
+      - name: Compile code
+        run: yarn compile
+      - name: Run unit tests
+        run: yarn test
